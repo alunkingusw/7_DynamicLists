@@ -25,9 +25,14 @@ struct ContentView: View {
                     PhoneEntry(name: "Tamino", number:"07123456789"),
                     PhoneEntry(name: "Pamina", number:"07123456789")]
     var body: some View {
-        List (contacts){ contact in
-            PhoneEntry(name:contact.name, number:contact.number)
-            
+        NavigationView{
+            List (contacts){ contact in
+                NavigationLink{
+                    DetailView(contact)
+                } label:{PhoneEntry(name:contact.name, number:contact.number)
+                }
+            }
+            .navigationTitle("Contacts")
         }
     }
 }
