@@ -6,3 +6,14 @@
 //
 
 import Foundation
+class Contact: Identifiable{
+    var name:String
+    var number:String
+    let id = UUID()
+    
+    init(name:String, number:String){
+        self.name = name
+        self.number = number
+    }
+    
+}
